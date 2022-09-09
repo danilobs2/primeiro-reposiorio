@@ -7,10 +7,54 @@
 body{
     display:flex;
     justify-content: center; /*centraliza*/
+    padding: 20px;
 }
 .popsicle{
+    position: relative;
     width: 150px;
     height: 230px;
+
     border: 3px solid black;
+    border-top-left-radius: 25px; /*Mundando o canto superior esquerdo*/
+    border-top-right-radius: 25px; /*Mundando o canto superior direito*/
+
+    border-bottom-left-radius: 25px; /*Mundando o canto inferior esquerdo*/
+    border-bottom-right-radius: 25px; /*Mundando o canto inferior direito*/
+
+    background: repeating-linear-gradient(
+        320deg,
+        #2962ff 0%, #2962ff 10%,
+        green  10%, green 20%,
+        yellow 20%, yellow 30%,
+        green 30%, red 40%,
+        blue 40%, blue 50%
+        
+
+    );
+    background-size: 200% 200%;
+    animation: popsicle-animation 5s linear infinite forwards;
 }
 
+@keyframes popsicle-animation{
+    from{
+        background-position: 0% 0%;
+    }
+    to{
+        background-position: 100% 100%;
+    }
+}
+
+.stick{ /*Palito*/
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    margin-left: -23px;
+
+    width: 40px;
+    height: 80px;
+    border: 3px solid rgb(61, 61, 55);
+    background: silver;
+
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 25px;
+}
